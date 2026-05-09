@@ -311,7 +311,7 @@ function App() {
             </div>
 
             <p style={{ fontSize: 16.5, lineHeight: 1.55, color: '#718095', maxWidth: 650, margin: '0 auto 16px' }}>
-              A dedicated AI-powered front door for Arokia Health — helping people understand Dr Arokia's private consultation pathways, specialist interests, professional wellbeing support and the right next step.
+              A dedicated AI-powered Ask Page for Arokia Health helping people understand Dr Arokia's private consultation pathways, specialist interests, professional wellbeing support and the right next step.
             </p>
 
             <div
@@ -396,7 +396,7 @@ function App() {
           </nav>
 
           {/* Highlight Box */}
-          <section
+         {/* <section
             style={{
               background: 'linear-gradient(135deg, rgba(16,42,63,0.97), rgba(36,95,103,0.93))',
               color: '#fff',
@@ -425,7 +425,7 @@ function App() {
             >
               Request Consultation →
             </a>
-          </section>
+          </section> */}
 
           {/* Choose Your Path */}
           <CardSection title="Choose Your Path">
@@ -470,7 +470,7 @@ function App() {
           </CardSection>
 
           {/* Why This Page Matters */}
-          <CardSection title="Why This Page Matters">
+         {/*<CardSection title="Why This Page Matters">
             <div style={{ display: 'grid', gap: 11 }}>
               <Tile title="One shareable private practice front door">
                 Dr Arokia can share one page across LinkedIn, Instagram, WhatsApp, conferences, emails and referrals.
@@ -485,10 +485,10 @@ function App() {
                 Over 90 days, the dashboard can show what people ask about most: trauma, bipolar, addiction, perinatal health, burnout, consultation logistics or speaking.
               </Tile>
             </div>
-          </CardSection>
+          </CardSection> */}
 
           {/* 90-Day Launch Focus */}
-          <CardSection title="Suggested 90-Day Launch Focus">
+         {/*<CardSection title="Suggested 90-Day Launch Focus">
             <div style={{ display: 'grid', gap: 11 }}>
               <Tile title="Month 1 — Launch private consultation front door">
                 Share the page through LinkedIn, Instagram, professional networks and direct referral conversations.
@@ -501,15 +501,16 @@ function App() {
               </Tile>
             </div>
           </CardSection>
-
+            */}
           {/* Positioning Statement */}
-          <CardSection title="Positioning Statement">
+         {/*<CardSection title="Positioning Statement">
             <p style={{ margin: 0, color: '#718095', fontSize: 14.5, lineHeight: 1.68 }}>
               <span style={{ borderLeft: '4px solid #c8a25b', paddingLeft: 14, display: 'block', fontStyle: 'italic' }}>
                 Arokia Health exists for people who need a thoughtful, specialist psychiatric opinion — and for professionals who need mental health care that understands complexity, culture, relationships, trauma and the pressures of modern work.
               </span>
             </p>
           </CardSection>
+          */}
 
           {/* Socials */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', margin: '26px 0 14px' }}>
@@ -548,7 +549,7 @@ function App() {
           {/* Footer */}
           <footer style={{ textAlign: 'center', color: '#9aa6b5', fontSize: 11.5, lineHeight: 1.7, paddingBottom: 8 }}>
             © Dr Arokia Antonysamy · Arokia Health · AI page by{' '}
-            <strong style={{ color: '#245f67' }}>NeuraScaleX</strong>
+            <strong style={{ color: '#245f67' }}><a href="https://neurascalex.com" target="_blank" rel="noopener noreferrer">NeuraScaleX</a></strong>
             <br />
             Educational information only. Not a substitute for professional advice, diagnosis, treatment, medication advice or crisis support. Clinical care should always be accessed through the appropriate clinical provider, emergency route or booking pathway.
             <br />
@@ -601,7 +602,7 @@ function App() {
         >
           💬
         </span>
-        <span style={{ whiteSpace: 'nowrap' }}>Find My Next Step</span>
+        <span style={{ whiteSpace: 'nowrap' }}>Chat with me</span>
       </button>
     </div>
   );

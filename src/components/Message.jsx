@@ -10,12 +10,19 @@ export function Message({ message, onReaction, onFollowUp, onTopic, isLatestBotM
       {!isUser && (
         <div className="flex items-center gap-1.5 mb-1">
           <div
-            className="w-[18px] h-[18px] rounded-full flex items-center justify-center text-white font-black text-[8px]"
+            className="w-[18px] h-[18px] rounded-full flex-shrink-0 overflow-hidden flex items-center justify-center text-white font-black text-[8px]"
             style={{ background: 'linear-gradient(135deg, #102a3f, #c8a25b)' }}
           >
-            AA
+            {logoUrl ? (
+              <img
+                src={logoUrl}
+                alt="avatar"
+                className="w-full h-full object-cover"
+                onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement.innerText = 'AA'; }}
+              />
+            ) : 'AA'}
           </div>
-          <span className="text-[10px] text-[#9aa6b5] font-bold">Ask Dr Arokia's Assistant</span>
+          <span className="text-[10px] text-[#9aa6b5] font-bold">{clinicName || "Ask Dr Arokia's Assistant"}</span>
         </div>
       )}
 
