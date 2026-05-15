@@ -161,9 +161,10 @@ function ServiceTile({ title, children, tags }) {
 }
 
 // Card section wrapper
-function CardSection({ title, children, style }) {
+function CardSection({ title, children, style, id }) {
   return (
     <section
+      id={id}
       style={{
         background: 'rgba(255,255,255,0.94)',
         border: '1px solid #e7e2d8',
@@ -171,6 +172,7 @@ function CardSection({ title, children, style }) {
         boxShadow: '0 10px 28px rgba(16,42,63,0.08)',
         padding: 22,
         marginBottom: 16,
+        scrollMarginTop: 18,
         ...style
       }}
     >
@@ -257,7 +259,7 @@ function App() {
             whiteSpace: 'nowrap',
           }}
         >
-          PRIVATE PSYCHIATRY · TRAUMA-INFORMED CARE · PROFESSIONAL WELLBEING
+          PRIVATE ONLINE PSYCHIATRY · TRAUMA-INFORMED CARE · ADULTS ACROSS THE UK
         </div>
       </div>
 
@@ -303,15 +305,15 @@ function App() {
             </div>
 
             <h1 style={{ margin: '0 0 8px', fontSize: 'clamp(34px, 7vw, 50px)', lineHeight: 1.04, letterSpacing: '-0.05em', fontWeight: 950, color: '#162d42' }}>
-              Ask Dr Arokia's Assistant
+              Ask Dr Arokia
             </h1>
 
             <div style={{ fontSize: 13, color: '#9aa6b5', fontWeight: 850, letterSpacing: '0.07em', textTransform: 'uppercase', marginBottom: 12 }}>
-              Dr Arokia Antonysamy · Consultant Psychiatrist · Mental Health Innovator
+              Dr Arokia Antonysamy · Consultant Psychiatrist · MRCPsych · 20+ Years' Experience
             </div>
 
             <p style={{ fontSize: 16.5, lineHeight: 1.55, color: '#718095', maxWidth: 650, margin: '0 auto 16px' }}>
-              A dedicated AI-powered Ask Page for Arokia Health helping people understand Dr Arokia's private consultation pathways, specialist interests, professional wellbeing support and the right next step.
+              Private online psychiatry for adults across the UK. Ask questions, understand Dr Arokia's consultation pathways, and find the right next step before booking.
             </p>
 
             <div
@@ -330,7 +332,26 @@ function App() {
                 boxShadow: '0 10px 28px rgba(16,42,63,0.08)',
               }}
             >
-              ✨ Transforming the helpless into user experts through compassionate, specialist psychiatry
+              A guided first conversation before a private psychiatric consultation
+            </div>
+
+            {/* Safety Note */}
+            <div
+              style={{
+                background: '#faedf0',
+                border: '1px solid rgba(157,66,84,0.28)',
+                color: '#9d4254',
+                borderRadius: 18,
+                padding: '13px 15px',
+                fontSize: 13,
+                lineHeight: 1.55,
+                fontWeight: 760,
+                margin: '18px auto 0',
+                maxWidth: 650,
+                textAlign: 'left',
+              }}
+            >
+              <strong style={{ color: '#9d4254' }}>Important:</strong> Arokia Health provides planned private psychiatric consultations only. It does not provide crisis or emergency support. If you need urgent help, contact NHS 111, your GP, A&E, your local crisis team, or call 999 in an emergency.
             </div>
 
             {/* Badges */}
@@ -339,9 +360,10 @@ function App() {
               style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: 8, marginTop: 16 }}
             >
               {[
-                { label: 'Private Psychiatry', bg: '#e7f3f4', color: '#245f67' },
-                { label: 'Trauma-Informed Care', bg: '#fff5df', color: '#8b651e' },
-                { label: 'Perinatal · Bipolar · Addictions', bg: '#eef5f0', color: '#6f8a78' },
+                { label: 'Private Online Psychiatry', bg: '#e7f3f4', color: '#245f67' },
+                { label: "20+ Years' Experience", bg: '#fff5df', color: '#8b651e' },
+                { label: 'Trauma-Informed Care', bg: '#eef5f0', color: '#6f8a78' },
+                { label: 'Adults Across the UK', bg: '#e7f3f4', color: '#245f67' },
                 { label: 'Educational only', bg: '#faedf0', color: '#9d4254' },
               ].map((b) => (
                 <span
@@ -371,15 +393,15 @@ function App() {
             <PrimaryCTA
               href="https://drarokia.com/#contact"
               icon="📅"
-              title="Request a Private Consultation"
-              sub="Start the enquiry route for Arokia Health private psychiatry support."
+              title="Book a Private Consultation"
+              sub="Start the enquiry route for private online psychiatry with Arokia Health."
               variant="gold"
             />
             <PrimaryCTA
               href="https://drarokia.com/"
               icon="🌐"
-              title="Visit Dr Arokia's Website"
-              sub="Learn more about her vision, expertise, media, services and leadership work."
+              title="Ask a Question First"
+              sub="Use Ask Dr Arokia to understand whether a private consultation may be the right next step."
               variant="teal"
             />
           </section>
@@ -388,15 +410,15 @@ function App() {
           <DividerTitle>Quick Links</DividerTitle>
 
           <nav aria-label="Primary links" style={{ display: 'grid', gap: 11, marginBottom: 22 }}>
-            <LinkCard href="https://drarokia.com/#contact" icon="📅" title="Book / Enquire for Consultation" sub="Private consultation enquiry through Arokia Health" variant="gold" />
-            <LinkCard href="https://drarokia.com/" icon="👩‍⚕️" title="Arokia Health Website" sub="Vision, services, expertise and contact details" variant="teal" />
-            <LinkCard href="https://www.bupa.co.uk/finder/consultant/details/dr_arokia_antonysamy" icon="🏥" title="Bupa Consultant Profile" sub="Face-to-face, video and telephone consultation profile" variant="sage" />
-            <LinkCard href="https://uk.linkedin.com/in/arokia-antonysamy-b6701127" icon={<span style={{ fontWeight: 900, fontSize: 14 }}>in</span>} title="Connect on LinkedIn" sub="Mental health leadership, innovation, AI and professional updates" variant="teal" />
-            <LinkCard href="https://www.instagram.com/dr.arokia/" icon="📷" title="Follow Dr Arokia on Instagram" sub="Personal, professional and public-facing updates" variant="red" />
+            <LinkCard href="https://drarokia.com/#contact" icon="📅" title="Book / Enquire for Consultation" sub="Private online psychiatric consultation enquiry through Arokia Health" variant="gold" />
+            <LinkCard href="#what-to-expect" icon="📝" title="What to Expect" sub="Initial assessment, treatment planning, GP communication and follow-up" variant="teal" />
+            <LinkCard href="#reports" icon="📄" title="Reports & Documentation" sub="Medico-legal, occupational health, DVLA, insurance forms and supporting documentation" variant="sage" />
+            <LinkCard href="https://www.bupa.co.uk/finder/consultant/details/dr_arokia_antonysamy" icon="🏥" title="Bupa Consultant Profile" sub="Consultant profile and professional listing" variant="teal" />
+            <LinkCard href="https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/" icon="🚨" title="Urgent Mental Health Help" sub="Arokia Health does not provide crisis or emergency support" variant="red" />
           </nav>
 
           {/* Highlight Box */}
-         {/* <section
+          <section
             style={{
               background: 'linear-gradient(135deg, rgba(16,42,63,0.97), rgba(36,95,103,0.93))',
               color: '#fff',
@@ -407,15 +429,13 @@ function App() {
             }}
           >
             <h2 style={{ margin: '0 0 10px', fontSize: 24, letterSpacing: '-0.03em' }}>
-              Arokia Health can start with this page.
+              Not sure where to start? Ask first.
             </h2>
             <p style={{ margin: '0 0 16px', lineHeight: 1.65, color: 'rgba(255,255,255,0.9)' }}>
-              This gives Dr Arokia one professional, shareable front door before building a full private practice website. The AI assistant helps visitors understand whether they need a consultation, professional burnout support, trauma-informed assessment, or a different signpost.
+              Whether you are considering a private psychiatric consultation, wondering if Dr Arokia can support your concern, or need a safer signpost, Ask Dr Arokia helps you choose the next sensible step before contacting the team.
             </p>
             <a
-              href="https://drarokia.com/#contact"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#ask-assistant"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8,
                 background: '#fff', color: '#245f67',
@@ -423,24 +443,27 @@ function App() {
                 fontWeight: 950, fontSize: 13, textDecoration: 'none',
               }}
             >
-              Request Consultation →
+              Ask a Question First →
             </a>
-          </section> */}
+          </section>
 
           {/* Choose Your Path */}
           <CardSection title="Choose Your Path">
             <div style={{ display: 'grid', gap: 11 }}>
-              <Tile title="I want a private psychiatric consultation" link="https://drarokia.com/#contact" linkText="Start Consultation Enquiry">
-                For adults seeking a specialist psychiatric assessment, formulation, review or next-step guidance through Arokia Health.
+              <Tile title="I want a private psychiatric consultation" link="https://drarokia.com/#contact" linkText="Book / Enquire for Consultation">
+                For adults across the UK seeking specialist psychiatric assessment, diagnosis, medication review, formulation or treatment planning through Arokia Health.
               </Tile>
-              <Tile title="I am affected by trauma or relationship-based distress" link="https://drarokia.com/#contact" linkText="Ask About Trauma-Informed Support">
-                For people experiencing trauma, complex PTSD themes, family guilt, grief, cultural conflict, relationship strain or persistent anxiety linked to life context.
+              <Tile title="I'm not sure if I need a psychiatrist" link="#ask-assistant" linkText="Ask a Question First">
+                If you are unsure whether psychiatry is the right route, Ask Dr Arokia can help you understand what a psychiatrist does and when an assessment may be useful.
               </Tile>
-              <Tile title="I'm a professional dealing with burnout" link="https://drarokia.com/#contact" linkText="Enquire About Professional Support">
-                For professionals experiencing exhaustion, loss of purpose, workplace stress, leadership pressure or return-to-work concerns.
+              <Tile title="I need help with trauma, anxiety, depression, bipolar, OCD or addiction" link="https://drarokia.com/#contact" linkText="Start Consultation Enquiry">
+                For people seeking a thoughtful, evidence-based psychiatric assessment and a personalised care plan that may include medication, therapy referral, lifestyle recommendations or collaborative care.
               </Tile>
-              <Tile title="I want to understand Dr Arokia's leadership and innovation work" link="https://uk.linkedin.com/in/arokia-antonysamy-b6701127" linkText="View LinkedIn Profile">
-                For speaking, collaborations, AI and mental health innovation, public education, leadership and advisory conversations.
+              <Tile title="I need a report or specialist documentation" link="https://drarokia.com/#contact" linkText="Enquire About Reports">
+                For medico-legal reports, occupational health reports, DVLA reports, insurance forms or supporting documentation. Additional fees may apply depending on complexity.
+              </Tile>
+              <Tile title="I need urgent help or crisis support" link="https://www.nhs.uk/nhs-services/mental-health-services/where-to-get-urgent-help-for-mental-health/" linkText="Get Urgent Help">
+                Arokia Health does not provide emergency care. If you feel unsafe or need urgent support, contact NHS 111, your GP, A&E, your local crisis team, or 999.
               </Tile>
             </div>
           </CardSection>
@@ -448,78 +471,97 @@ function App() {
           {/* Areas Dr Arokia Can Support */}
           <CardSection title="Areas Dr Arokia Can Support">
             <div style={{ display: 'grid', gap: 11 }}>
-              <ServiceTile title="PTSD & Trauma" tags={['PTSD', 'Complex PTSD', 'Workplace trauma']}>
-                Trauma may appear as anxiety, relationship difficulty, emotional numbness, or physical pain without a clear medical cause. Dr Arokia has specialist interest in trauma-informed care.
+              <ServiceTile title="Depression & Anxiety Disorders" tags={['Depression', 'Anxiety', 'Panic']}>
+                Assessment and treatment planning for low mood, anxiety, panic symptoms, worry, avoidance, functional impact and related mental health concerns.
               </ServiceTile>
-              <ServiceTile title="Relationship-Based Distress" tags={['Family guilt', 'Grief', 'Cultural conflict']}>
-                Support for guilt, grief, relational strain, family responsibility, cultural conflict and emotionally complex life situations that create genuine suffering.
+              <ServiceTile title="PTSD & Trauma-Related Conditions" tags={['PTSD', 'Trauma-informed', 'MOD experience']}>
+                Trauma-informed psychiatric assessment for PTSD and trauma-related difficulties, including complex presentations shaped by life experience, culture, relationships or work.
               </ServiceTile>
-              <ServiceTile title="Bipolar Disorder" tags={['Bipolar I & II', 'Mood stabilisation', 'Relapse prevention']}>
-                Careful psychiatric assessment, mood history, medication review, risk evaluation, mood stabilisation and relapse prevention planning.
+              <ServiceTile title="OCD, Phobias & Anxiety Spectrum Conditions" tags={['OCD', 'Phobias', 'Intrusive thoughts']}>
+                Careful assessment of intrusive thoughts, compulsions, phobias, avoidance patterns and anxiety-related difficulties, with personalised treatment planning.
               </ServiceTile>
-              <ServiceTile title="Substance Misuse & Addiction" tags={['Alcohol dependence', 'Prescription misuse', 'Dual diagnosis']}>
-                Assessment for alcohol dependence, prescription misuse, substance misuse and dual diagnosis where addiction and mental health need to be understood together.
+              <ServiceTile title="Bipolar Disorder & Psychosis" tags={['Bipolar disorder', 'Psychosis', 'Relapse prevention']}>
+                Specialist psychiatric assessment, medication review, risk evaluation, relapse prevention planning and collaborative care for complex mood or psychotic disorders.
               </ServiceTile>
-              <ServiceTile title="Perinatal Mental Health" tags={['Antenatal depression', 'Postnatal depression', 'Medication safety']}>
-                Specialist support around mental health during pregnancy and the postnatal period, including antenatal and postnatal depression themes.
+              <ServiceTile title="Perinatal Mental Health" tags={['Perinatal', 'Postnatal depression', 'Medication safety']}>
+                Assessment and treatment planning for mental health difficulties during pregnancy or after birth, including antenatal and postnatal depression themes.
               </ServiceTile>
-              <ServiceTile title="Burnout & Workplace Stress" tags={['Professional burnout', 'Executive mental health', 'Return to work']}>
-                Assessment and support for professionals whose careers are affecting their mental health, from exhaustion to loss of purpose and return-to-work planning.
+              <ServiceTile title="Addiction & Substance Misuse" tags={['Addiction', 'Alcohol misuse', 'Dual diagnosis']}>
+                Assessment of alcohol and substance misuse concerns, dual diagnosis and related mental health needs. Dr Arokia has additional endorsement in Addiction Psychiatry through the Royal College of Psychiatrists.
               </ServiceTile>
             </div>
           </CardSection>
 
-          {/* Why This Page Matters */}
-         {/*<CardSection title="Why This Page Matters">
+          {/* What to Expect */}
+          <CardSection title="What to Expect" style={{ scrollMarginTop: 18 }} id="what-to-expect">
             <div style={{ display: 'grid', gap: 11 }}>
-              <Tile title="One shareable private practice front door">
-                Dr Arokia can share one page across LinkedIn, Instagram, WhatsApp, conferences, emails and referrals.
+              <Tile title="Comprehensive first assessment">
+                The first appointment is usually around 60 minutes and explores current concerns, symptoms, personal and medical history, previous treatments, medication, and day-to-day impact.
               </Tile>
-              <Tile title="Safer signposting before consultation">
-                The assistant explains what the page can and cannot do, routes urgent issues away, and guides appropriate visitors toward enquiry.
+              <Tile title="Personalised treatment plan">
+                Where appropriate, the plan may include medication, psychological therapy referral, lifestyle recommendations and collaborative care with other healthcare professionals.
               </Tile>
-              <Tile title="Lead generation before full website build">
-                This page can validate demand for Arokia Health before committing to a larger private practice website.
+              <Tile title="Follow-up care">
+                Follow-up appointments are usually around 30 minutes and can review progress, symptoms, medication, treatment response, side effects and next steps.
               </Tile>
-              <Tile title="Audience intelligence">
-                Over 90 days, the dashboard can show what people ask about most: trauma, bipolar, addiction, perinatal health, burnout, consultation logistics or speaking.
-              </Tile>
-            </div>
-          </CardSection> */}
-
-          {/* 90-Day Launch Focus */}
-         {/*<CardSection title="Suggested 90-Day Launch Focus">
-            <div style={{ display: 'grid', gap: 11 }}>
-              <Tile title="Month 1 — Launch private consultation front door">
-                Share the page through LinkedIn, Instagram, professional networks and direct referral conversations.
-              </Tile>
-              <Tile title="Month 2 — Learn patient and professional demand">
-                Review assistant questions and CTA clicks to see which pathways generate the strongest interest.
-              </Tile>
-              <Tile title="Month 3 — Decide website and offer architecture">
-                Use real visitor behaviour to decide what the full Arokia Health website should prioritise.
+              <Tile title="GP communication with consent">
+                With your consent, a summary letter is usually shared with you and your GP to support safe, coordinated care.
               </Tile>
             </div>
           </CardSection>
-            */}
+
+          {/* Reports & Documentation */}
+          <CardSection title="Reports & Specialist Documentation" style={{ scrollMarginTop: 18 }} id="reports">
+            <p style={{ margin: '0 0 12px', color: '#718095', fontSize: 14.5, lineHeight: 1.68 }}>
+              Dr Arokia can provide specialist documentation where appropriate, including medico-legal reports, occupational health reports, DVLA reports, insurance forms and supporting letters. Additional fees may apply depending on the purpose and complexity of the report.
+            </p>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 7 }}>
+              {['Medico-legal', 'Occupational health', 'DVLA', 'Insurance forms', 'Supporting letters'].map((tag) => (
+                <span key={tag} style={{ display: 'inline-flex', background: '#fff', border: '1px solid #e7e2d8', color: '#245f67', borderRadius: 999, padding: '6px 9px', fontSize: 11, fontWeight: 900, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{tag}</span>
+              ))}
+            </div>
+          </CardSection>
+
+          {/* About Dr Arokia */}
+          <CardSection title="About Dr Arokia">
+            <p style={{ margin: 0, color: '#718095', fontSize: 14.5, lineHeight: 1.68 }}>
+              Dr Arokia Antonysamy is a UK-trained Consultant Psychiatrist with more than 20 years of experience across the NHS and independent healthcare sector. She has held senior clinical and leadership roles including Medical Director and Associate Medical Director positions, and provides private online psychiatric consultations for adults across the UK.
+            </p>
+          </CardSection>
+
+          {/* Dr Arokia's Approach */}
+          <CardSection title="Dr Arokia's Approach">
+            <div style={{ display: 'grid', gap: 11 }}>
+              <Tile title="Personalised and collaborative">
+                Consultations are designed to understand the person behind the symptoms and agree a treatment plan that fits their needs, goals and context.
+              </Tile>
+              <Tile title="Trauma-informed and culturally sensitive">
+                Dr Arokia recognises that experiences, background, values, relationships and culture can shape mental health and recovery.
+              </Tile>
+              <Tile title="Evidence-based and holistic">
+                Treatment planning may include medication, therapy referral, lifestyle recommendations, complementary or spiritual considerations where appropriate, and multidisciplinary collaboration.
+              </Tile>
+            </div>
+          </CardSection>
+
           {/* Positioning Statement */}
-         {/*<CardSection title="Positioning Statement">
+          <CardSection title="Positioning Statement">
             <p style={{ margin: 0, color: '#718095', fontSize: 14.5, lineHeight: 1.68 }}>
               <span style={{ borderLeft: '4px solid #c8a25b', paddingLeft: 14, display: 'block', fontStyle: 'italic' }}>
-                Arokia Health exists for people who need a thoughtful, specialist psychiatric opinion — and for professionals who need mental health care that understands complexity, culture, relationships, trauma and the pressures of modern work.
+                Arokia Health provides thoughtful, personalised private online psychiatry for adults across the UK — combining specialist clinical expertise, trauma-informed care, cultural sensitivity and collaborative treatment planning.
               </span>
             </p>
           </CardSection>
-          */}
 
           {/* Socials */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'center', margin: '26px 0 14px' }}>
             {[
-              { label: 'Website', href: 'https://drarokia.com/' },
               { label: 'Consultation', href: 'https://drarokia.com/#contact' },
+              { label: 'What to Expect', href: '#what-to-expect' },
+              { label: 'Reports', href: '#reports' },
+              { label: 'Bupa', href: 'https://www.bupa.co.uk/finder/consultant/details/dr_arokia_antonysamy' },
               { label: 'LinkedIn', href: 'https://uk.linkedin.com/in/arokia-antonysamy-b6701127' },
               { label: 'Instagram', href: 'https://www.instagram.com/dr.arokia/' },
-              { label: 'Bupa', href: 'https://www.bupa.co.uk/finder/consultant/details/dr_arokia_antonysamy' },
             ].map((s) => (
               <a
                 key={s.label}
@@ -548,7 +590,7 @@ function App() {
 
           {/* Footer */}
           <footer style={{ textAlign: 'center', color: '#9aa6b5', fontSize: 11.5, lineHeight: 1.7, paddingBottom: 8 }}>
-            © Dr Arokia Antonysamy · Arokia Health · AI page by{' '}
+            © Dr Arokia Antonysamy · Arokia Health · Ask page powered by{' '}
             <strong style={{ color: '#245f67' }}><a href="https://neurascalex.com" target="_blank" rel="noopener noreferrer">NeuraScaleX</a></strong>
             <br />
             Educational information only. Not a substitute for professional advice, diagnosis, treatment, medication advice or crisis support. Clinical care should always be accessed through the appropriate clinical provider, emergency route or booking pathway.
@@ -602,7 +644,7 @@ function App() {
         >
           💬
         </span>
-        <span style={{ whiteSpace: 'nowrap' }}>Chat with me</span>
+        <span style={{ whiteSpace: 'nowrap' }}>Find My Next Step</span>
       </button>
     </div>
   );
