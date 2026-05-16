@@ -604,7 +604,7 @@ function App() {
       <button
         type="button"
         onClick={scrollToAssistant}
-        aria-label="Find my next step with Dr Arokia's assistant"
+        aria-label="Ask Dr Arokia"
         style={{
           position: 'fixed',
           right: 18,
@@ -644,7 +644,7 @@ function App() {
         >
           💬
         </span>
-        <span style={{ whiteSpace: 'nowrap' }}>Find My Next Step</span>
+        <span style={{ whiteSpace: 'nowrap' }}>Ask Dr Arokia</span>
       </button>
     </div>
   );
